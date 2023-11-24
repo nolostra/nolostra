@@ -1,5 +1,5 @@
 # 💫 About Me:
-working in : Flutter, React native, Native (Mobile Development)<br>Collaborate in : Any opensource mobile development<br>Learning :  Go
+working in : Flutter, React native, Nodejs <br>Collaborate in : Any opensource mobile development<br>Learning :  Go
 
 
 ## 🌐 Socials:

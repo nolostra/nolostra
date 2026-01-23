@@ -16,7 +16,7 @@ export default function StatusIndicator() {
         }}
         className="w-2 h-2 rounded-full bg-accent"
       />
-      <span>Available at Trajector</span>
+      <span>Open to opportunities</span>
     </div>
   )
 }

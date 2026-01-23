@@ -74,7 +74,7 @@ export default function Contact() {
         </HeadingReveal>
         <ScrollReveal delay={0.15}>
           <p className="text-lg sm:text-xl text-text-secondary mb-12 leading-relaxed">
-            Open to remote opportunities. Let's build something impactful together.
+            Open to remote opportunities. Let&apos;s build something impactful together.
           </p>
         </ScrollReveal>
 

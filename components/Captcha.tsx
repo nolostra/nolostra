@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 
 interface CaptchaProps {
   onVerify: (isVerified: boolean) => void
@@ -12,11 +12,7 @@ export default function Captcha({ onVerify }: CaptchaProps) {
   const [answer, setAnswer] = useState('')
   const [isVerified, setIsVerified] = useState(false)
 
-  useEffect(() => {
-    generateQuestion()
-  }, [])
-
-  const generateQuestion = () => {
+  const generateQuestion = useCallback(() => {
     const n1 = Math.floor(Math.random() * 10) + 1
     const n2 = Math.floor(Math.random() * 10) + 1
     setNum1(n1)
@@ -24,7 +20,11 @@ export default function Captcha({ onVerify }: CaptchaProps) {
     setAnswer('')
     setIsVerified(false)
     onVerify(false)
-  }
+  }, [onVerify])
+
+  useEffect(() => {
+    generateQuestion()
+  }, [generateQuestion])
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value
@@ -39,7 +39,7 @@ export default function Captcha({ onVerify }: CaptchaProps) {
   return (
     <div className="space-y-2">
       <label className="block text-sm font-medium text-text mb-2">
-        Verify you're human
+        Verify you&apos;re human
       </label>
       <div className="flex items-center gap-3">
         <div className="flex items-center gap-2 px-4 py-3 bg-bg border border-border rounded-md">

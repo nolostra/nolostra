@@ -4,19 +4,22 @@ import { motion } from 'framer-motion'
 
 export default function StatusIndicator() {
   return (
-    <div className="flex items-center gap-2 text-sm text-text-secondary">
+    <div className="flex items-center gap-2 text-sm">
       <motion.div
         animate={{
-          opacity: [0.4, 0.8, 0.4],
+          opacity: [0.4, 1, 0.4],
+          scale: [1, 1.1, 1],
         }}
         transition={{
-          duration: 3,
+          duration: 2,
           repeat: Infinity,
           ease: 'easeInOut',
         }}
-        className="w-2 h-2 rounded-full bg-accent"
+        className="w-2.5 h-2.5 rounded-full bg-green-500"
       />
-      <span>Open to opportunities</span>
+      <span className="text-text-secondary">
+        <span className="text-accent font-medium">Available</span> for new projects
+      </span>
     </div>
   )
 }

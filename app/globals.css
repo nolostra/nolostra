@@ -160,11 +160,13 @@ body::after {
     radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.02) 0%, transparent 60%);
 }
 
-/* Disable grid on very small screens for readability */
+/* Keep grid visible on mobile but with reduced opacity for readability */
 @media (max-width: 640px) {
-  body::before,
+  body::before {
+    opacity: calc(var(--grid-opacity) * 0.6);
+  }
   body::after {
-    display: none;
+    opacity: 0.6;
   }
 }
 

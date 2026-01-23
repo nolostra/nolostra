@@ -11,12 +11,16 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'Saish Dabholkar | Full Stack Developer & AI Engineer',
+  title: 'Saish Dabholkar | Full Stack Developer',
   description: 'Full Stack Developer with 3+ years of experience building scalable web and mobile applications. Specialized in backend systems, performance optimization, and AI-powered products.',
   keywords: ['Saish Dabholkar', 'Full Stack Developer', 'AI Engineer', 'React Native', 'Next.js', 'Go', 'Node.js', 'Goa', 'India'],
   authors: [{ name: 'Saish Dabholkar' }],
+  icons: {
+    icon: '/favicon.svg',
+    apple: '/favicon.svg',
+  },
   openGraph: {
-    title: 'Saish Dabholkar | Full Stack Developer & AI Engineer',
+    title: 'Saish Dabholkar | Full Stack Developer',
     description: 'Full Stack Developer with 3+ years of experience building scalable web and mobile applications',
     type: 'website',
   },

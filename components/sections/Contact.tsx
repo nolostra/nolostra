@@ -6,6 +6,7 @@ import ScrollReveal from '@/components/animations/ScrollReveal'
 import HeadingReveal from '@/components/animations/HeadingReveal'
 import { Send, CheckCircle, AlertCircle } from 'lucide-react'
 import emailjs from '@emailjs/browser'
+import Captcha from '@/components/Captcha'
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -14,9 +15,18 @@ export default function Contact() {
     message: '',
   })
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle')
+  const [isCaptchaVerified, setIsCaptchaVerified] = useState(false)
+  const [captchaKey, setCaptchaKey] = useState(0)
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
+    
+    if (!isCaptchaVerified) {
+      setStatus('error')
+      setTimeout(() => setStatus('idle'), 2000)
+      return
+    }
+    
     setStatus('sending')
 
     try {
@@ -36,6 +46,8 @@ export default function Contact() {
 
       setStatus('success')
       setFormData({ name: '', email: '', message: '' })
+      setIsCaptchaVerified(false)
+      setCaptchaKey(prev => prev + 1) // Reset captcha
       
       setTimeout(() => setStatus('idle'), 3000)
     } catch (error) {
@@ -116,9 +128,11 @@ export default function Contact() {
               />
             </div>
 
+            <Captcha key={captchaKey} onVerify={setIsCaptchaVerified} />
+
             <button
               type="submit"
-              disabled={status === 'sending'}
+              disabled={status === 'sending' || !isCaptchaVerified}
               className="w-full px-6 py-3 bg-accent text-white font-medium rounded-md disabled:opacity-50 disabled:cursor-not-allowed hover:opacity-90 transition-opacity duration-200 flex items-center justify-center gap-2"
             >
               {status === 'sending' ? (

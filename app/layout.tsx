@@ -21,11 +21,11 @@ export const metadata: Metadata = {
   authors: [{ name: 'Saish Dabholkar' }],
   icons: {
     icon: [
-      { url: '/nolostra/favicon.svg', type: 'image/svg+xml' },
-      { url: '/nolostra/favicon.ico', sizes: 'any' },
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/favicon.ico', sizes: 'any' },
     ],
     apple: [
-      { url: '/nolostra/apple-icon.svg', type: 'image/svg+xml' },
+      { url: '/apple-icon.svg', type: 'image/svg+xml' },
     ],
   },
   manifest: '/site.webmanifest',
@@ -50,9 +50,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.variable} suppressHydrationWarning>
       <head>
-        <link rel="manifest" href="/nolostra/site.webmanifest" />
-        <link rel="icon" href="/nolostra/favicon.svg" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href="/nolostra/apple-icon.svg" />
+        <link rel="manifest" href="/site.webmanifest" />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/apple-icon.svg" />
       </head>
       <body>
         <ThemeProvider

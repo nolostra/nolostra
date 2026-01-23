@@ -37,13 +37,13 @@ export default function Captcha({ onVerify }: CaptchaProps) {
   }
 
   return (
-    <div className="space-y-2">
-      <label className="block text-sm font-medium text-text mb-2">
+    <div className="space-y-1.5 sm:space-y-2">
+      <label className="block text-xs sm:text-sm font-medium text-text mb-1.5 sm:mb-2">
         Verify you&apos;re human
       </label>
-      <div className="flex items-center gap-3">
-        <div className="flex items-center gap-2 px-4 py-3 bg-bg border border-border rounded-md">
-          <span className="text-text font-medium">
+      <div className="flex items-center gap-2 sm:gap-3 flex-wrap">
+        <div className="flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3 lg:px-4 py-2 sm:py-2.5 lg:py-3 bg-bg border border-border rounded-md">
+          <span className="text-xs sm:text-sm lg:text-base text-text font-medium">
             {num1} + {num2} =
           </span>
         </div>
@@ -52,16 +52,16 @@ export default function Captcha({ onVerify }: CaptchaProps) {
           value={answer}
           onChange={handleChange}
           placeholder="?"
-          className="w-20 px-4 py-3 bg-bg border border-border rounded-md text-text placeholder-text-secondary focus:outline-none focus:border-accent transition-colors duration-200 text-center"
+          className="w-14 sm:w-16 lg:w-20 px-2.5 sm:px-3 lg:px-4 py-2 sm:py-2.5 lg:py-3 bg-bg border border-border rounded-md text-xs sm:text-sm lg:text-base text-text placeholder-text-secondary focus:outline-none focus:border-accent transition-colors duration-200 text-center"
           required
         />
         <button
           type="button"
           onClick={generateQuestion}
-          className="px-3 py-2 text-text-secondary hover:text-text transition-colors duration-200"
+          className="px-2 sm:px-3 py-2 text-text-secondary hover:text-text transition-colors duration-200 flex-shrink-0"
           aria-label="Refresh captcha"
         >
-          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
           </svg>
         </button>

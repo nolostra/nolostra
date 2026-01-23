@@ -15,7 +15,7 @@ export default function Principle({ children, delay = 0 }: PrincipleProps) {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.3, delay: delay + 0.1 }}
-        className="text-base text-text-secondary italic mb-8 leading-relaxed"
+        className="text-xs sm:text-sm lg:text-base text-text-secondary italic mb-4 sm:mb-6 lg:mb-8 leading-relaxed text-center"
       >
         {children}
       </motion.p>

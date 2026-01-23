@@ -7,7 +7,7 @@
   --color-accent: #1f6feb; /* zed.dev blue */
 }
 
-/* Light Mode */
+/* Light Mode - zed.dev inspired */
 :root {
   --color-bg: #fafafa;
   --color-surface: #ffffff;
@@ -33,9 +33,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  max-width: 100%; /* Global max-width to prevent overflow */
 }
 
-html {
+html, body {
+  overflow-x: hidden; /* Prevent horizontal scroll */
+  max-width: 100vw; /* Ensure no overflow */
+  width: 100%; /* Ensure full width */
   scroll-behavior: smooth;
 }
 
@@ -48,18 +52,26 @@ body {
   line-height: 1.7;
   letter-spacing: -0.01em;
   position: relative;
-  transition: background-color 150ms ease, color 150ms ease;
+  transition: background-color 0.3s ease-out, color 150ms ease;
+  /* Cursor effect on background */
+  background-image: 
+    radial-gradient(
+      circle 300px at var(--cursor-glow-x, 50%) var(--cursor-glow-y, 50%),
+      rgba(31, 111, 235, 0.03) 0%, /* zed.dev blue */
+      transparent 50%
+    );
+  background-attachment: fixed;
 }
 
-/* Grid colors - zed.dev style with subtle gradient */
+/* Grid colors - zed.dev style */
 :root {
-  /* Light mode - use subtle blue-gray for visibility */
+  /* Light mode - subtle blue-gray for grid */
   --grid-color: #2563eb;
-  --grid-opacity: 0.15;
+  --grid-opacity: 0.08;
 }
 
 .dark {
-  /* Dark mode - subtle blue gradient grid color */
+  /* Dark mode - subtle blue for grid */
   --grid-color: #1f6feb;
   --grid-opacity: 0.12;
 }
@@ -91,14 +103,24 @@ html {
   outline-offset: 2px;
 }
 
+/* Cursor effect CSS variables */
+:root {
+  --cursor-grid-opacity: var(--grid-opacity);
+  --cursor-hue-shift: 0deg;
+  --cursor-sat-shift: 0%;
+  --cursor-glow-x: 50%;
+  --cursor-glow-y: 50%;
+}
+
 /* Grid texture pattern with gradient - zed.dev style */
 body::before {
   content: '';
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
+  /* Changed to width/height for better overflow control */
+  width: 100vw; 
+  height: 100vh;
   pointer-events: none;
   z-index: 0;
   /* Base grid pattern */
@@ -107,7 +129,8 @@ body::before {
     linear-gradient(to bottom, var(--grid-color) 0.5px, transparent 0.5px);
   background-size: 20px 20px;
   background-position: 0 0;
-  opacity: var(--grid-opacity);
+  opacity: var(--cursor-grid-opacity, var(--grid-opacity));
+  transition: opacity 0.3s ease-out;
   /* Gradient overlay for fade effect */
   mask-image: linear-gradient(
     to bottom,
@@ -132,6 +155,14 @@ body::before {
 /* Section positioning */
 section {
   position: relative;
+  overflow-x: hidden; /* Ensure sections don't overflow */
+}
+
+/* Responsive media elements */
+img, video, canvas, svg, iframe, object, embed {
+  max-width: 100%;
+  height: auto;
+  display: block; /* Prevents extra space below images */
 }
 
 /* Multicolor gradient overlay on grid - zed.dev inspired */
@@ -140,24 +171,24 @@ body::after {
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  max-width: 100%;
   pointer-events: none;
   z-index: 0;
-  /* Subtle multicolor gradient overlay - light mode (more visible) */
+  /* Subtle gradient overlay - light mode */
   background: 
-    radial-gradient(circle at 20% 30%, rgba(37, 99, 235, 0.03) 0%, transparent 60%),
-    radial-gradient(circle at 80% 70%, rgba(139, 92, 246, 0.02) 0%, transparent 60%),
-    radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.015) 0%, transparent 60%);
+    radial-gradient(circle 400px at var(--cursor-glow-x, 20%) var(--cursor-glow-y, 30%), rgba(37, 99, 235, 0.02) 0%, transparent 60%),
+    radial-gradient(circle 400px at var(--cursor-glow-x, 80%) var(--cursor-glow-y, 70%), rgba(31, 111, 235, 0.02) 0%, transparent 60%);
   opacity: 1;
+  transition: background 0.3s ease-out;
 }
 
-/* Dark mode - more visible multicolor gradient */
+/* Dark mode - gradient overlay */
 .dark body::after {
   background: 
-    radial-gradient(circle at 20% 30%, rgba(31, 111, 235, 0.04) 0%, transparent 60%),
-    radial-gradient(circle at 80% 70%, rgba(139, 92, 246, 0.03) 0%, transparent 60%),
-    radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.02) 0%, transparent 60%);
+    radial-gradient(circle 400px at var(--cursor-glow-x, 20%) var(--cursor-glow-y, 30%), rgba(31, 111, 235, 0.04) 0%, transparent 60%),
+    radial-gradient(circle 400px at var(--cursor-glow-x, 80%) var(--cursor-glow-y, 70%), rgba(59, 130, 246, 0.03) 0%, transparent 60%);
 }
 
 /* Keep grid visible on mobile but with reduced opacity for readability */
@@ -174,4 +205,6 @@ body::after {
 main {
   position: relative;
   z-index: 1;
+  max-width: 100vw; /* Ensure main content doesn't overflow */
+  overflow-x: hidden; /* Prevent horizontal scroll on main content */
 }

@@ -82,13 +82,13 @@ export default function Projects() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null)
 
   return (
-    <section id="projects" className="py-32 px-6 sm:px-8 lg:px-12 relative">
+    <section id="projects" className="py-8 sm:py-16 lg:py-32 px-2 sm:px-4 lg:px-12 relative">
       <MarginNote position="right" delay={0.4}>
         Every project is a hypothesis. I test, measure, iterate.
       </MarginNote>
       <div className="max-w-5xl mx-auto">
         <HeadingReveal>
-          <h2 className="text-4xl sm:text-5xl font-semibold mb-8 tracking-tight text-center">
+          <h2 className="text-xl sm:text-2xl lg:text-5xl font-semibold mb-3 sm:mb-4 lg:mb-8 tracking-tight text-center">
             Projects
           </h2>
         </HeadingReveal>
@@ -97,37 +97,37 @@ export default function Projects() {
           Every technical decision is a trade-off. I document the problem, constraint, and reasoning.
         </Principle>
 
-        <div className="grid md:grid-cols-2 gap-8 mt-12">
+        <div className="grid md:grid-cols-2 gap-2.5 sm:gap-3 lg:gap-8 mt-4 sm:mt-6 lg:mt-12">
           {projects.map((project, index) => (
             <ScrollReveal key={project.id} delay={index * 0.1}>
               <div
-                className="p-8 border border-border rounded-lg bg-surface shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer"
+                className="p-3 sm:p-4 lg:p-8 border border-border rounded-lg bg-surface shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer"
                 onClick={() => setSelectedProject(project)}
               >
-                <h3 className="text-2xl font-semibold mb-4 text-text">
+                <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold mb-2 sm:mb-3 lg:mb-4 text-text">
                   {project.title}
                 </h3>
-                <div className="space-y-3 mb-6 text-sm text-text-secondary leading-relaxed">
+                <div className="space-y-1.5 sm:space-y-2 lg:space-y-3 mb-3 sm:mb-4 lg:mb-6 text-xs sm:text-sm text-text-secondary leading-relaxed">
                   <p><span className="font-medium text-text">Problem:</span> {project.problem}</p>
                   <p><span className="font-medium text-text">Constraint:</span> {project.constraint}</p>
                   <p className="italic"><span className="font-medium text-text">Decision:</span> {project.decision}</p>
                 </div>
                 {project.scale && (
-                  <p className="text-sm text-accent mb-4 font-medium">
+                  <p className="text-xs sm:text-sm text-accent mb-3 sm:mb-4 font-medium">
                     {project.scale}
                   </p>
                 )}
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-1.5 sm:gap-2">
                   {project.tech.slice(0, 4).map((tech) => (
                     <span
                       key={tech}
-                      className="px-3 py-1 text-xs bg-bg border border-border rounded text-text-secondary"
+                      className="px-2 sm:px-3 py-1 text-xs bg-bg border border-border rounded text-text-secondary"
                     >
                       {tech}
                     </span>
                   ))}
                   {project.tech.length > 4 && (
-                    <span className="px-3 py-1 text-xs text-text-secondary">
+                    <span className="px-2 sm:px-3 py-1 text-xs text-text-secondary">
                       +{project.tech.length - 4}
                     </span>
                   )}
@@ -146,7 +146,7 @@ export default function Projects() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 z-50 flex items-center justify-center p-6 bg-black/50 backdrop-blur-sm"
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/50 backdrop-blur-sm"
             onClick={() => setSelectedProject(null)}
           >
             <motion.div
@@ -155,45 +155,45 @@ export default function Projects() {
               exit={{ opacity: 0, y: 20 }}
               transition={{ duration: 0.25, ease: [0.4, 0, 0.2, 1] }}
               onClick={(e) => e.stopPropagation()}
-              className="relative max-w-3xl w-full bg-surface border border-border rounded-lg p-10 max-h-[90vh] overflow-y-auto"
+              className="relative max-w-3xl w-full bg-surface border border-border rounded-lg p-4 sm:p-6 lg:p-10 max-h-[90vh] overflow-y-auto"
             >
               <button
                 onClick={() => setSelectedProject(null)}
-                className="absolute top-4 right-4 p-2 hover:bg-bg rounded transition-colors duration-200"
+                className="absolute top-3 right-3 sm:top-4 sm:right-4 p-2 hover:bg-bg rounded transition-colors duration-200"
                 aria-label="Close modal"
               >
                 <X className="w-5 h-5" />
               </button>
 
-              <h3 className="text-3xl font-semibold mb-6 text-text">
+              <h3 className="text-2xl sm:text-3xl font-semibold mb-4 sm:mb-6 text-text pr-8">
                 {selectedProject.title}
               </h3>
               
-              <div className="space-y-4 mb-8 p-6 bg-bg rounded-lg border border-border">
-                <p className="text-base text-text-secondary leading-relaxed">
+              <div className="space-y-3 sm:space-y-4 mb-6 sm:mb-8 p-4 sm:p-6 bg-bg rounded-lg border border-border">
+                <p className="text-sm sm:text-base text-text-secondary leading-relaxed">
                   <span className="font-medium text-text">Problem:</span> {selectedProject.problem}
                 </p>
-                <p className="text-base text-text-secondary leading-relaxed">
+                <p className="text-sm sm:text-base text-text-secondary leading-relaxed">
                   <span className="font-medium text-text">Constraint:</span> {selectedProject.constraint}
                 </p>
-                <p className="text-base text-text-secondary italic leading-relaxed">
+                <p className="text-sm sm:text-base text-text-secondary italic leading-relaxed">
                   <span className="font-medium text-text">Decision:</span> {selectedProject.decision}
                 </p>
               </div>
 
-              <p className="text-lg text-text-secondary mb-8 leading-relaxed">
+              <p className="text-base sm:text-lg text-text-secondary mb-6 sm:mb-8 leading-relaxed">
                 {selectedProject.longDescription}
               </p>
 
               {selectedProject.scale && (
-                <p className="text-accent font-medium mb-6">
+                <p className="text-sm sm:text-base text-accent font-medium mb-4 sm:mb-6">
                   {selectedProject.scale}
                 </p>
               )}
 
-              <div className="mb-6">
-                <h4 className="text-sm font-semibold mb-3 text-text">Tech Stack</h4>
-                <div className="flex flex-wrap gap-2">
+              <div className="mb-4 sm:mb-6">
+                <h4 className="text-xs sm:text-sm font-semibold mb-2 sm:mb-3 text-text">Tech Stack</h4>
+                <div className="flex flex-wrap gap-1.5 sm:gap-2">
                   {selectedProject.tech.map((tech) => (
                     <span
                       key={tech}
@@ -206,16 +206,16 @@ export default function Projects() {
               </div>
 
               {(selectedProject.github || selectedProject.live) && (
-                <div className="flex gap-4">
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
                   {selectedProject.github && (
                     <a
                       href={selectedProject.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-4 py-2 border border-border rounded hover:bg-bg transition-colors duration-200"
+                      className="flex items-center justify-center gap-2 px-4 py-2 border border-border rounded hover:bg-bg transition-colors duration-200 text-sm"
                     >
                       <Github className="w-4 h-4" />
-                      <span className="text-sm">GitHub</span>
+                      <span>GitHub</span>
                     </a>
                   )}
                   {selectedProject.live && (
@@ -223,10 +223,10 @@ export default function Projects() {
                       href={selectedProject.live}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 px-4 py-2 bg-accent text-white rounded hover:opacity-90 transition-opacity duration-200"
+                      className="flex items-center justify-center gap-2 px-4 py-2 bg-accent text-white rounded hover:opacity-90 transition-opacity duration-200 text-sm"
                     >
                       <ExternalLink className="w-4 h-4" />
-                      <span className="text-sm">Live Demo</span>
+                      <span>Live Demo</span>
                     </a>
                   )}
                 </div>

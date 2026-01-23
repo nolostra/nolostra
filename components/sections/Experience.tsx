@@ -62,13 +62,13 @@ const experiences: ExperienceItem[] = [
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-32 px-6 sm:px-8 lg:px-12 bg-surface relative">
+    <section id="experience" className="py-8 sm:py-16 lg:py-32 px-2 sm:px-4 lg:px-12 bg-surface relative">
       <MarginNote position="left" delay={0.3}>
         Impact over hours logged.
       </MarginNote>
       <div className="max-w-3xl mx-auto">
         <HeadingReveal>
-          <h2 className="text-4xl sm:text-5xl font-semibold mb-8 tracking-tight text-center">
+          <h2 className="text-xl sm:text-2xl lg:text-5xl font-semibold mb-3 sm:mb-4 lg:mb-8 tracking-tight text-center">
             Experience
           </h2>
         </HeadingReveal>
@@ -77,34 +77,34 @@ export default function Experience() {
           I choose roles where I can own outcomes, not just complete tasks.
         </Principle>
 
-        <div className="space-y-16 mt-12">
+        <div className="space-y-6 sm:space-y-10 lg:space-y-16 mt-4 sm:mt-6 lg:mt-12">
           {experiences.map((exp, index) => (
             <ScrollReveal key={exp.company} delay={index * 0.1}>
-              <div className="border-l-2 border-border pl-8 space-y-5">
+              <div className="border-l-2 border-border pl-3 sm:pl-5 lg:pl-8 space-y-2 sm:space-y-3 lg:space-y-5">
                 <div>
-                  <h3 className="text-2xl font-semibold text-text mb-1">
+                  <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-text mb-0.5 sm:mb-1">
                     {exp.role}
                   </h3>
-                  <p className="text-xl text-accent font-medium mb-2">
+                  <p className="text-base sm:text-lg lg:text-xl text-accent font-medium mb-0.5 sm:mb-1 lg:mb-2">
                     {exp.company}
                   </p>
-                  <p className="text-sm text-text-secondary">
+                  <p className="text-xs sm:text-sm text-text-secondary">
                     {exp.period} • {exp.location}
                   </p>
                 </div>
                 
-                <p className="text-base text-text-secondary italic leading-relaxed">
+                <p className="text-xs sm:text-sm lg:text-base text-text-secondary italic leading-relaxed">
                   {exp.principle}
                 </p>
                 
-                <p className="text-lg text-text-secondary leading-relaxed">
+                <p className="text-sm sm:text-base lg:text-lg text-text-secondary leading-relaxed">
                   {exp.responsibility}
                 </p>
                 
-                <ul className="space-y-3 text-text-secondary leading-relaxed">
+                <ul className="space-y-1.5 sm:space-y-2 lg:space-y-3 text-xs sm:text-sm lg:text-base text-text-secondary leading-relaxed">
                   {exp.impact.map((item, i) => (
-                    <li key={i} className="flex items-start gap-3">
-                      <span className="text-accent mt-1.5">•</span>
+                    <li key={i} className="flex items-start gap-2 sm:gap-3">
+                      <span className="text-accent mt-1.5 flex-shrink-0">•</span>
                       <span>{item}</span>
                     </li>
                   ))}

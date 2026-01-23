@@ -3,18 +3,17 @@
 import { motion } from 'framer-motion'
 
 export default function StatusIndicator() {
+  // Show only essential messages for cleaner look
   const messages = [
-    'Available for new projects',
     'Open to work',
-    'Building something new? Let\'s talk',
-    'Open to opportunities',
+    'Available for new projects',
   ]
   
   const scrollingText = messages.join(' • ') + ' • '
   
   return (
-    <div className="relative overflow-hidden w-full max-w-md mx-auto">
-      <div className="flex items-center gap-3">
+    <div className="relative overflow-hidden w-full max-w-[240px] sm:max-w-md mx-auto">
+      <div className="flex items-center gap-1.5 sm:gap-2 lg:gap-3">
         <motion.div
           animate={{
             opacity: [0.6, 1, 0.6],
@@ -25,10 +24,10 @@ export default function StatusIndicator() {
             repeat: Infinity,
             ease: 'easeInOut',
           }}
-          className="w-2.5 h-2.5 rounded-full bg-green-500 flex-shrink-0"
+          className="w-1.5 h-1.5 sm:w-2 sm:h-2 lg:w-2.5 lg:h-2.5 rounded-full bg-green-500 flex-shrink-0"
         />
         
-        <div className="overflow-hidden flex-1">
+        <div className="overflow-hidden flex-1 min-w-0" style={{ maxWidth: 'calc(100% - 16px)' }}>
           <motion.div
             animate={{
               x: ['0%', '-50%'],
@@ -39,12 +38,12 @@ export default function StatusIndicator() {
               ease: 'linear',
             }}
             className="flex whitespace-nowrap"
-            style={{ width: '200%' }}
+            style={{ width: '200%', willChange: 'transform' }}
           >
-            <span className="text-sm text-text-secondary inline-block">
+            <span className="text-[10px] sm:text-xs lg:text-sm text-text-secondary inline-block pr-6 sm:pr-8">
               {scrollingText}
             </span>
-            <span className="text-sm text-text-secondary inline-block">
+            <span className="text-[10px] sm:text-xs lg:text-sm text-text-secondary inline-block pr-6 sm:pr-8">
               {scrollingText}
             </span>
           </motion.div>

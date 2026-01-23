@@ -1,0 +1,22 @@
+{
+  "name": "Saish Dabholkar Portfolio",
+  "short_name": "SD Portfolio",
+  "description": "Full Stack Developer Portfolio",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/apple-icon.svg",
+      "sizes": "180x180",
+      "type": "image/svg+xml"
+    }
+  ],
+  "theme_color": "#1f6feb",
+  "background_color": "#0d1117",
+  "display": "standalone",
+  "start_url": "/nolostra/"
+}
+

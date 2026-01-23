@@ -55,13 +55,13 @@ body {
 :root {
   /* Light mode - use subtle blue-gray for visibility */
   --grid-color: #2563eb;
-  --grid-opacity: 0.08;
+  --grid-opacity: 0.15;
 }
 
 .dark {
   /* Dark mode - subtle blue gradient grid color */
   --grid-color: #1f6feb;
-  --grid-opacity: 0.08;
+  --grid-opacity: 0.12;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -163,10 +163,10 @@ body::after {
 /* Keep grid visible on mobile but with reduced opacity for readability */
 @media (max-width: 640px) {
   body::before {
-    opacity: calc(var(--grid-opacity) * 0.6);
+    opacity: calc(var(--grid-opacity) * 0.8);
   }
   body::after {
-    opacity: 0.6;
+    opacity: 0.7;
   }
 }
 

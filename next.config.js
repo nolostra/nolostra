@@ -5,9 +5,8 @@ const nextConfig = {
   images: {
     unoptimized: true, // Required for static export
   },
-  // If deploying to a subdirectory, uncomment and set basePath
-  // basePath: '/nolostra',
-  // trailingSlash: true,
+  basePath: '/nolostra', // Required for GitHub Pages subdirectory
+  trailingSlash: true,
 }
 
 module.exports = nextConfig

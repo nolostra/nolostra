@@ -9,17 +9,22 @@ export function ThemeProvider({ children, ...props }: ThemeProviderProps) {
 
   useEffect(() => {
     // Only mount after client-side hydration
-    // This prevents storage access errors during SSR
+    // This prevents storage access errors during SSR and GitHub Pages
     if (typeof window !== 'undefined') {
-      try {
-        // Test if storage is accessible
-        localStorage.getItem('test')
-        setMounted(true)
-      } catch (e) {
-        // Storage not available, but still mount (theme won't persist)
-        console.warn('Storage not available, theme preferences will not persist')
-        setMounted(true)
-      }
+      // Use requestAnimationFrame to ensure we're fully in browser context
+      requestAnimationFrame(() => {
+        try {
+          // Test if storage is accessible (GitHub Pages might have restrictions)
+          const testKey = '__theme_test__'
+          localStorage.setItem(testKey, 'test')
+          localStorage.removeItem(testKey)
+          setMounted(true)
+        } catch (e) {
+          // Storage not available (e.g., private browsing, GitHub Pages restrictions)
+          // Silently handle - theme will still work, just won't persist
+          setMounted(true)
+        }
+      })
     }
   }, [])
 

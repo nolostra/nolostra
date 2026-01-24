@@ -5,6 +5,7 @@ import Navigation from '@/components/Navigation'
 import { ThemeProvider } from '@/components/ThemeProvider'
 import CursorEffect from '@/components/CursorEffect'
 import StorageErrorHandler from '@/components/StorageErrorHandler'
+import GoogleAnalytics from '@/components/GoogleAnalytics'
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -56,6 +57,7 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/nolostra/apple-icon.svg" />
       </head>
       <body>
+        <GoogleAnalytics />
         <StorageErrorHandler />
         <ThemeProvider
           attribute="class"

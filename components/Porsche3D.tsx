@@ -92,12 +92,34 @@ export default function Porsche3D() {
   }, [])
 
   // Fallback to Sketchfab embed if local model is not available
+  // Configured to match local Three.js behavior: auto-rotate, side view, minimal UI
   if (modelError) {
+    // Sketchfab embed parameters to match local behavior:
+    // - autospin: auto-rotate speed (0.5 matches local autoRotateSpeed)
+    // - ui_controls: hide controls for cleaner look
+    // - ui_infos: hide info overlay
+    // - ui_watermark: hide watermark
+    // - transparent: transparent background
+    // - preload: preload model
+    // - camera position will be set via initial view
+    const embedParams = new URLSearchParams({
+      autostart: '1', // Auto-start animation
+      autospin: '0.5', // Auto-rotate speed (matches local autoRotateSpeed)
+      camera: '0', // Initial camera
+      ui_theme: 'dark', // Dark theme
+      ui_controls: '0', // Hide controls for cleaner look
+      ui_infos: '0', // Hide info overlay
+      ui_watermark: '0', // Hide watermark
+      ui_stop: '0', // Hide stop button
+      transparent: '1', // Transparent background
+      preload: '1', // Preload model
+    })
+    
     return (
       <div className="w-full max-w-[90vw] sm:max-w-full mx-auto h-[120px] sm:h-[180px] md:h-[250px] lg:h-[500px] overflow-hidden relative">
         <iframe
           title="1975 Porsche 911 (930) Turbo"
-          src={`${SKETCHFAB_EMBED_URL}?autostart=0&camera=0&ui_theme=dark&transparent=1`}
+          src={`${SKETCHFAB_EMBED_URL}?${embedParams.toString()}`}
           allow="autoplay; fullscreen; xr-spatial-tracking"
           allowFullScreen
           className="w-full h-full border-0"

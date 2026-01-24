@@ -36,7 +36,7 @@ class ModelErrorBoundary extends Component<
 }
 
 // Model component that loads the GLB file
-function PorscheModel() {
+function PorscheModel({ onError }: { onError: () => void }) {
   const { scene } = useGLTF(MODEL_PATH)
   
   // Scale and position the model appropriately
@@ -61,6 +61,8 @@ function PorscheModel() {
 
 export default function Porsche3D() {
   const [modelError, setModelError] = useState(false)
+  const SKETCHFAB_MODEL_ID = '8568d9d14a994b9cae59499f0dbed21e'
+  const SKETCHFAB_EMBED_URL = `https://sketchfab.com/models/${SKETCHFAB_MODEL_ID}/embed`
 
   // Check if model file exists before trying to load
   // Suppress errors to avoid console noise
@@ -81,8 +83,7 @@ export default function Porsche3D() {
           setModelError(true)
         }
       } catch (error) {
-        // Silently fail - model not available
-        // Don't log to console to avoid noise
+        // Silently fail - model not available, will use Sketchfab embed
         setModelError(true)
       }
     }
@@ -90,9 +91,41 @@ export default function Porsche3D() {
     checkModel()
   }, [])
 
-  // Don't render if model is not available
+  // Fallback to Sketchfab embed if local model is not available
   if (modelError) {
-    return null // Hide the component entirely if model is not available
+    return (
+      <div className="w-full max-w-[90vw] sm:max-w-full mx-auto h-[120px] sm:h-[180px] md:h-[250px] lg:h-[500px] overflow-hidden relative">
+        <iframe
+          title="1975 Porsche 911 (930) Turbo"
+          src={`${SKETCHFAB_EMBED_URL}?autostart=0&camera=0&ui_theme=dark&transparent=1`}
+          allow="autoplay; fullscreen; xr-spatial-tracking"
+          allowFullScreen
+          className="w-full h-full border-0"
+          style={{ background: 'transparent' }}
+        />
+        <p className="text-xs text-text-secondary mt-2 text-center px-4">
+          3D Model by{' '}
+          <a
+            href="https://sketchfab.com/LionsharpStudios"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-accent hover:underline"
+          >
+            Lionsharp Studios
+          </a>
+          {' '}•{' '}
+          <a
+            href={`https://sketchfab.com/3d-models/free-1975-porsche-911-930-turbo-${SKETCHFAB_MODEL_ID}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-accent hover:underline"
+          >
+            View on Sketchfab
+          </a>
+          {' '}• CC Attribution
+        </p>
+      </div>
+    )
   }
 
   return (
@@ -108,7 +141,7 @@ export default function Porsche3D() {
             <ambientLight intensity={0.5} />
             <directionalLight position={[10, 10, 5]} intensity={1} />
             <pointLight position={[-10, -10, -5]} intensity={0.5} />
-            <PorscheModel />
+            <PorscheModel onError={() => setModelError(true)} />
             <OrbitControls
               enableZoom={true}
               enablePan={false}

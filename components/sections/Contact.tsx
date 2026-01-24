@@ -4,7 +4,7 @@ import { useState, FormEvent } from 'react'
 import { motion } from 'framer-motion'
 import ScrollReveal from '@/components/animations/ScrollReveal'
 import HeadingReveal from '@/components/animations/HeadingReveal'
-import { Send, CheckCircle, AlertCircle } from 'lucide-react'
+import { Send, CheckCircle, AlertCircle, Phone, MessageCircle } from 'lucide-react'
 import emailjs from '@emailjs/browser'
 import Captcha from '@/components/Captcha'
 
@@ -76,6 +76,28 @@ export default function Contact() {
           <p className="text-[11px] sm:text-xs lg:text-xl text-text-secondary mb-4 sm:mb-6 lg:mb-12 leading-relaxed text-center">
             Open to remote opportunities. Let&apos;s build something impactful together.
           </p>
+        </ScrollReveal>
+
+        {/* Phone Contact Options */}
+        <ScrollReveal delay={0.1}>
+          <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 mb-4 sm:mb-6 lg:mb-8 justify-center">
+            <a
+              href="tel:+917083172495"
+              className="flex items-center justify-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 bg-surface border border-border text-text font-medium rounded-md hover:bg-bg transition-colors duration-200 text-xs sm:text-sm lg:text-base"
+            >
+              <Phone className="w-4 h-4" />
+              <span>Call</span>
+            </a>
+            <a
+              href="https://wa.me/917083172495"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 bg-surface border border-border text-text font-medium rounded-md hover:bg-bg transition-colors duration-200 text-xs sm:text-sm lg:text-base"
+            >
+              <MessageCircle className="w-4 h-4" />
+              <span>WhatsApp</span>
+            </a>
+          </div>
         </ScrollReveal>
 
         <ScrollReveal delay={0.1}>

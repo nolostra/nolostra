@@ -12,8 +12,8 @@ export default function StatusIndicator() {
   const scrollingText = messages.join(' • ') + ' • '
   
   return (
-    <div className="relative overflow-hidden w-full max-w-[240px] sm:max-w-md mx-auto">
-      <div className="flex items-center gap-1.5 sm:gap-2 lg:gap-3">
+    <div className="relative overflow-hidden w-full max-w-[320px] sm:max-w-md mx-auto px-2">
+      <div className="flex items-center gap-2 sm:gap-2 lg:gap-3">
         <motion.div
           animate={{
             opacity: [0.6, 1, 0.6],
@@ -27,7 +27,7 @@ export default function StatusIndicator() {
           className="w-1.5 h-1.5 sm:w-2 sm:h-2 lg:w-2.5 lg:h-2.5 rounded-full bg-green-500 flex-shrink-0"
         />
         
-        <div className="overflow-hidden flex-1 min-w-0" style={{ maxWidth: 'calc(100% - 16px)' }}>
+        <div className="overflow-hidden flex-1 min-w-0" style={{ maxWidth: 'calc(100% - 24px)' }}>
           <motion.div
             animate={{
               x: ['0%', '-50%'],
@@ -40,10 +40,10 @@ export default function StatusIndicator() {
             className="flex whitespace-nowrap"
             style={{ width: '200%', willChange: 'transform' }}
           >
-            <span className="text-xs sm:text-xs lg:text-sm text-text-secondary inline-block pr-6 sm:pr-8">
+            <span className="text-xs sm:text-xs lg:text-sm text-text-secondary inline-block pr-3 sm:pr-8">
               {scrollingText}
             </span>
-            <span className="text-xs sm:text-xs lg:text-sm text-text-secondary inline-block pr-6 sm:pr-8">
+            <span className="text-xs sm:text-xs lg:text-sm text-text-secondary inline-block pr-3 sm:pr-8">
               {scrollingText}
             </span>
           </motion.div>

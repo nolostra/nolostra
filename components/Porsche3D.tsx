@@ -23,7 +23,7 @@ class ModelErrorBoundary extends Component<
   }
 
   componentDidCatch(error: Error, errorInfo: ErrorInfo) {
-    console.warn('3D Model failed to load:', error)
+    // Silently handle error - model not available
     this.props.onError()
   }
 
@@ -63,16 +63,31 @@ export default function Porsche3D() {
   const [modelError, setModelError] = useState(false)
 
   // Check if model file exists before trying to load
+  // Suppress errors to avoid console noise
   useEffect(() => {
-    fetch(MODEL_PATH, { method: 'HEAD' })
-      .then((response) => {
+    const checkModel = async () => {
+      try {
+        const controller = new AbortController()
+        const timeoutId = setTimeout(() => controller.abort(), 3000) // 3 second timeout
+        
+        const response = await fetch(MODEL_PATH, { 
+          method: 'HEAD',
+          signal: controller.signal
+        })
+        
+        clearTimeout(timeoutId)
+        
         if (!response.ok) {
           setModelError(true)
         }
-      })
-      .catch(() => {
+      } catch (error) {
+        // Silently fail - model not available
+        // Don't log to console to avoid noise
         setModelError(true)
-      })
+      }
+    }
+    
+    checkModel()
   }, [])
 
   // Don't render if model is not available

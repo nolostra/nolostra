@@ -28,7 +28,7 @@ export const metadata: Metadata = {
       { url: '/apple-icon.svg', type: 'image/svg+xml' },
     ],
   },
-  manifest: '/site.webmanifest',
+  manifest: '/nolostra/site.webmanifest',
   openGraph: {
     title: 'Saish Dabholkar | Full Stack Developer',
     description: 'Full Stack Developer with 3+ years of experience building scalable web and mobile applications',
@@ -50,9 +50,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.variable} suppressHydrationWarning>
       <head>
-        <link rel="manifest" href="/site.webmanifest" />
-        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href="/apple-icon.svg" />
+        <link rel="manifest" href="/nolostra/site.webmanifest" />
+        <link rel="icon" href="/nolostra/favicon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/nolostra/apple-icon.svg" />
       </head>
       <body>
         <ThemeProvider

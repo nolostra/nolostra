@@ -4,12 +4,12 @@
   "description": "Full Stack Developer Portfolio",
   "icons": [
     {
-      "src": "/favicon.svg",
+      "src": "/nolostra/favicon.svg",
       "sizes": "any",
       "type": "image/svg+xml"
     },
     {
-      "src": "/apple-icon.svg",
+      "src": "/nolostra/apple-icon.svg",
       "sizes": "180x180",
       "type": "image/svg+xml"
     }

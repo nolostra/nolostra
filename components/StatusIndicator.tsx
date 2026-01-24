@@ -40,10 +40,10 @@ export default function StatusIndicator() {
             className="flex whitespace-nowrap"
             style={{ width: '200%', willChange: 'transform' }}
           >
-            <span className="text-[10px] sm:text-xs lg:text-sm text-text-secondary inline-block pr-6 sm:pr-8">
+            <span className="text-xs sm:text-xs lg:text-sm text-text-secondary inline-block pr-6 sm:pr-8">
               {scrollingText}
             </span>
-            <span className="text-[10px] sm:text-xs lg:text-sm text-text-secondary inline-block pr-6 sm:pr-8">
+            <span className="text-xs sm:text-xs lg:text-sm text-text-secondary inline-block pr-6 sm:pr-8">
               {scrollingText}
             </span>
           </motion.div>

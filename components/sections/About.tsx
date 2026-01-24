@@ -13,7 +13,7 @@ export default function About() {
       </MarginNote>
       <div className="max-w-3xl mx-auto">
         <HeadingReveal>
-          <h2 className="text-xl sm:text-2xl lg:text-5xl font-semibold mb-3 sm:mb-4 lg:mb-8 tracking-tight text-center">
+          <h2 className="text-2xl sm:text-2xl lg:text-5xl font-semibold mb-3 sm:mb-4 lg:mb-8 tracking-tight text-center">
             About
           </h2>
         </HeadingReveal>
@@ -23,7 +23,7 @@ export default function About() {
         </Principle>
 
         <ScrollReveal delay={0.15}>
-          <div className="space-y-2 sm:space-y-3 lg:space-y-6 text-xs sm:text-sm lg:text-lg text-text-secondary leading-relaxed text-center">
+          <div className="space-y-2 sm:space-y-3 lg:space-y-6 text-sm sm:text-sm lg:text-lg text-text-secondary leading-relaxed text-center">
             <p>
               Full Stack Developer with 3+ years of experience building scalable web and mobile applications. 
               Strong background in backend systems, performance optimization, and AI-powered products.

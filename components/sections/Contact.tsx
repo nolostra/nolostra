@@ -68,12 +68,12 @@ export default function Contact() {
     <section id="contact" className="py-8 sm:py-16 lg:py-32 px-2 sm:px-4 lg:px-12 bg-surface relative">
       <div className="max-w-2xl mx-auto">
         <HeadingReveal>
-          <h2 className="text-xl sm:text-2xl lg:text-5xl font-semibold mb-3 sm:mb-4 lg:mb-8 tracking-tight text-center">
+          <h2 className="text-2xl sm:text-2xl lg:text-5xl font-semibold mb-3 sm:mb-4 lg:mb-8 tracking-tight text-center">
             Contact
           </h2>
         </HeadingReveal>
         <ScrollReveal delay={0.15}>
-          <p className="text-[11px] sm:text-xs lg:text-xl text-text-secondary mb-4 sm:mb-6 lg:mb-12 leading-relaxed text-center">
+          <p className="text-sm sm:text-xs lg:text-xl text-text-secondary mb-4 sm:mb-6 lg:mb-12 leading-relaxed text-center">
             Open to remote opportunities. Let&apos;s build something impactful together.
           </p>
         </ScrollReveal>
@@ -83,7 +83,7 @@ export default function Contact() {
           <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 mb-4 sm:mb-6 lg:mb-8 justify-center">
             <a
               href="tel:+917083172495"
-              className="flex items-center justify-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 bg-surface border border-border text-text font-medium rounded-md hover:bg-bg transition-colors duration-200 text-xs sm:text-sm lg:text-base"
+              className="flex items-center justify-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 bg-surface border border-border text-text font-medium rounded-md hover:bg-bg transition-colors duration-200 text-sm sm:text-sm lg:text-base"
             >
               <Phone className="w-4 h-4" />
               <span>Call</span>
@@ -92,7 +92,7 @@ export default function Contact() {
               href="https://wa.me/917083172495"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 bg-surface border border-border text-text font-medium rounded-md hover:bg-bg transition-colors duration-200 text-xs sm:text-sm lg:text-base"
+              className="flex items-center justify-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 bg-surface border border-border text-text font-medium rounded-md hover:bg-bg transition-colors duration-200 text-sm sm:text-sm lg:text-base"
             >
               <MessageCircle className="w-4 h-4" />
               <span>WhatsApp</span>
@@ -103,7 +103,7 @@ export default function Contact() {
         <ScrollReveal delay={0.1}>
           <form onSubmit={handleSubmit} className="space-y-2.5 sm:space-y-3 lg:space-y-6">
             <div>
-              <label htmlFor="name" className="block text-xs sm:text-sm font-medium text-text mb-1.5 sm:mb-2">
+              <label htmlFor="name" className="block text-sm sm:text-sm font-medium text-text mb-1.5 sm:mb-2">
                 Name
               </label>
               <input
@@ -113,13 +113,13 @@ export default function Contact() {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full px-3 sm:px-4 py-2 sm:py-2.5 lg:py-3 bg-bg border border-border rounded-md text-sm sm:text-base text-text placeholder-text-secondary focus:outline-none focus:border-accent transition-colors duration-200"
+                className="w-full px-3 sm:px-4 py-2 sm:py-2.5 lg:py-3 bg-bg border border-border rounded-md text-base sm:text-base text-text placeholder-text-secondary focus:outline-none focus:border-accent transition-colors duration-200"
                 placeholder="Your name"
               />
             </div>
 
             <div>
-              <label htmlFor="email" className="block text-xs sm:text-sm font-medium text-text mb-1.5 sm:mb-2">
+              <label htmlFor="email" className="block text-sm sm:text-sm font-medium text-text mb-1.5 sm:mb-2">
                 Email
               </label>
               <input
@@ -129,13 +129,13 @@ export default function Contact() {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full px-3 sm:px-4 py-2 sm:py-2.5 lg:py-3 bg-bg border border-border rounded-md text-sm sm:text-base text-text placeholder-text-secondary focus:outline-none focus:border-accent transition-colors duration-200"
+                className="w-full px-3 sm:px-4 py-2 sm:py-2.5 lg:py-3 bg-bg border border-border rounded-md text-base sm:text-base text-text placeholder-text-secondary focus:outline-none focus:border-accent transition-colors duration-200"
                 placeholder="your.email@example.com"
               />
             </div>
 
             <div>
-              <label htmlFor="message" className="block text-xs sm:text-sm font-medium text-text mb-1.5 sm:mb-2">
+              <label htmlFor="message" className="block text-sm sm:text-sm font-medium text-text mb-1.5 sm:mb-2">
                 Message
               </label>
               <textarea
@@ -145,7 +145,7 @@ export default function Contact() {
                 onChange={handleChange}
                 required
                 rows={4}
-                className="w-full px-3 sm:px-4 py-2 sm:py-2.5 lg:py-3 bg-bg border border-border rounded-md text-sm sm:text-base text-text placeholder-text-secondary focus:outline-none focus:border-accent transition-colors duration-200 resize-none"
+                className="w-full px-3 sm:px-4 py-2 sm:py-2.5 lg:py-3 bg-bg border border-border rounded-md text-base sm:text-base text-text placeholder-text-secondary focus:outline-none focus:border-accent transition-colors duration-200 resize-none"
                 placeholder="Tell me about your project..."
               />
             </div>
@@ -155,7 +155,7 @@ export default function Contact() {
             <button
               type="submit"
               disabled={status === 'sending' || !isCaptchaVerified}
-              className="w-full px-4 sm:px-6 py-2.5 sm:py-3 bg-accent text-white text-xs sm:text-sm lg:text-base font-medium rounded-md disabled:opacity-50 disabled:cursor-not-allowed hover:opacity-90 transition-opacity duration-200 flex items-center justify-center gap-2"
+              className="w-full px-4 sm:px-6 py-2.5 sm:py-3 bg-accent text-white text-sm sm:text-sm lg:text-base font-medium rounded-md disabled:opacity-50 disabled:cursor-not-allowed hover:opacity-90 transition-opacity duration-200 flex items-center justify-center gap-2"
             >
               {status === 'sending' ? (
                 <>

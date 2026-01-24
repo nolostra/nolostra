@@ -88,7 +88,7 @@ export default function Projects() {
       </MarginNote>
       <div className="max-w-5xl mx-auto">
         <HeadingReveal>
-          <h2 className="text-xl sm:text-2xl lg:text-5xl font-semibold mb-3 sm:mb-4 lg:mb-8 tracking-tight text-center">
+          <h2 className="text-2xl sm:text-2xl lg:text-5xl font-semibold mb-3 sm:mb-4 lg:mb-8 tracking-tight text-center">
             Projects
           </h2>
         </HeadingReveal>
@@ -104,10 +104,10 @@ export default function Projects() {
                 className="p-3 sm:p-4 lg:p-8 border border-border rounded-lg bg-surface shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer"
                 onClick={() => setSelectedProject(project)}
               >
-                <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold mb-2 sm:mb-3 lg:mb-4 text-text">
+                <h3 className="text-xl sm:text-xl lg:text-2xl font-semibold mb-2 sm:mb-3 lg:mb-4 text-text">
                   {project.title}
                 </h3>
-                <div className="space-y-1.5 sm:space-y-2 lg:space-y-3 mb-3 sm:mb-4 lg:mb-6 text-xs sm:text-sm text-text-secondary leading-relaxed">
+                <div className="space-y-1.5 sm:space-y-2 lg:space-y-3 mb-3 sm:mb-4 lg:mb-6 text-sm sm:text-sm text-text-secondary leading-relaxed">
                   <p><span className="font-medium text-text">Problem:</span> {project.problem}</p>
                   <p><span className="font-medium text-text">Constraint:</span> {project.constraint}</p>
                   <p className="italic"><span className="font-medium text-text">Decision:</span> {project.decision}</p>

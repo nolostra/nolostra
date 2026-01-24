@@ -84,7 +84,7 @@ export default function Navigation() {
         <div className="flex items-center justify-between h-12 sm:h-16 lg:h-20">
           <button
             onClick={() => scrollTo('#hero')}
-            className="text-base sm:text-lg lg:text-xl font-semibold text-text hover:text-accent transition-colors duration-200"
+            className="text-lg sm:text-lg lg:text-xl font-semibold text-text hover:text-accent transition-colors duration-200"
           >
             SD
           </button>

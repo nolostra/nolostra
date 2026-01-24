@@ -68,7 +68,7 @@ export default function Experience() {
       </MarginNote>
       <div className="max-w-3xl mx-auto">
         <HeadingReveal>
-          <h2 className="text-xl sm:text-2xl lg:text-5xl font-semibold mb-3 sm:mb-4 lg:mb-8 tracking-tight text-center">
+          <h2 className="text-2xl sm:text-2xl lg:text-5xl font-semibold mb-3 sm:mb-4 lg:mb-8 tracking-tight text-center">
             Experience
           </h2>
         </HeadingReveal>
@@ -82,26 +82,26 @@ export default function Experience() {
             <ScrollReveal key={exp.company} delay={index * 0.1}>
               <div className="border-l-2 border-border pl-3 sm:pl-5 lg:pl-8 space-y-2 sm:space-y-3 lg:space-y-5">
                 <div>
-                  <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold text-text mb-0.5 sm:mb-1">
+                  <h3 className="text-xl sm:text-xl lg:text-2xl font-semibold text-text mb-0.5 sm:mb-1">
                     {exp.role}
                   </h3>
-                  <p className="text-base sm:text-lg lg:text-xl text-accent font-medium mb-0.5 sm:mb-1 lg:mb-2">
+                  <p className="text-lg sm:text-lg lg:text-xl text-accent font-medium mb-0.5 sm:mb-1 lg:mb-2">
                     {exp.company}
                   </p>
-                  <p className="text-xs sm:text-sm text-text-secondary">
+                  <p className="text-sm sm:text-sm text-text-secondary">
                     {exp.period} • {exp.location}
                   </p>
                 </div>
                 
-                <p className="text-xs sm:text-sm lg:text-base text-text-secondary italic leading-relaxed">
+                <p className="text-sm sm:text-sm lg:text-base text-text-secondary italic leading-relaxed">
                   {exp.principle}
                 </p>
                 
-                <p className="text-sm sm:text-base lg:text-lg text-text-secondary leading-relaxed">
+                <p className="text-base sm:text-base lg:text-lg text-text-secondary leading-relaxed">
                   {exp.responsibility}
                 </p>
                 
-                <ul className="space-y-1.5 sm:space-y-2 lg:space-y-3 text-xs sm:text-sm lg:text-base text-text-secondary leading-relaxed">
+                <ul className="space-y-1.5 sm:space-y-2 lg:space-y-3 text-sm sm:text-sm lg:text-base text-text-secondary leading-relaxed">
                   {exp.impact.map((item, i) => (
                     <li key={i} className="flex items-start gap-2 sm:gap-3">
                       <span className="text-accent mt-1.5 flex-shrink-0">•</span>

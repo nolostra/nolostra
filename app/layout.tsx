@@ -4,6 +4,7 @@ import './globals.css'
 import Navigation from '@/components/Navigation'
 import { ThemeProvider } from '@/components/ThemeProvider'
 import CursorEffect from '@/components/CursorEffect'
+import StorageErrorHandler from '@/components/StorageErrorHandler'
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -55,6 +56,7 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/nolostra/apple-icon.svg" />
       </head>
       <body>
+        <StorageErrorHandler />
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

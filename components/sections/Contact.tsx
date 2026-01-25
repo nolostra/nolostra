@@ -4,7 +4,7 @@ import { useState, FormEvent } from 'react'
 import { motion } from 'framer-motion'
 import ScrollReveal from '@/components/animations/ScrollReveal'
 import HeadingReveal from '@/components/animations/HeadingReveal'
-import { Send, CheckCircle, AlertCircle, Phone, MessageCircle } from 'lucide-react'
+import { Send, CheckCircle, AlertCircle, Phone, MessageCircle, Download } from 'lucide-react'
 import emailjs from '@emailjs/browser'
 import Captcha from '@/components/Captcha'
 
@@ -96,6 +96,15 @@ export default function Contact() {
             >
               <MessageCircle className="w-4 h-4" />
               <span>WhatsApp</span>
+            </a>
+            <a
+              href="https://drive.google.com/uc?export=download&id=1oWZu9m9iH5RtV_A3nA8g9hm5ebJn352r"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 bg-surface border border-border text-text font-medium rounded-md hover:bg-bg transition-colors duration-200 text-sm sm:text-sm lg:text-base"
+            >
+              <Download className="w-4 h-4" />
+              <span>Resume</span>
             </a>
           </div>
         </ScrollReveal>

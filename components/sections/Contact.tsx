@@ -98,7 +98,7 @@ export default function Contact() {
               <span>WhatsApp</span>
             </a>
             <a
-              href="https://drive.google.com/uc?export=download&id=1oWZu9m9iH5RtV_A3nA8g9hm5ebJn352r"
+              href="https://drive.google.com/file/d/1bY9EL_Apv4J5i1VrrYXGpPwu8Y0wptyG/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 bg-surface border border-border text-text font-medium rounded-md hover:bg-bg transition-colors duration-200 text-sm sm:text-sm lg:text-base"

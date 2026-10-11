@@ -9,7 +9,7 @@ interface ExperienceItem {
   company: string
   role: string
   period: string
-  location: string
+  location?: string
   principle: string
   responsibility: string
   impact: string[]
@@ -17,9 +17,21 @@ interface ExperienceItem {
 
 const experiences: ExperienceItem[] = [
   {
+    company: 'Algoworks',
+    role: 'Full Stack Developer',
+    period: 'Mar 2026 – Present',
+    principle: 'Good documentation is part of the product.',
+    responsibility:
+      'Working with the client ACD (AIA Contract Documents), focused on enhancing and improving their documentation',
+    impact: [
+      'Embedded with the ACD (AIA Contract Documents) team as a client-facing engineer',
+      'Enhancing documentation so the product is easier to understand, use, and maintain',
+    ],
+  },
+  {
     company: 'Trajector',
     role: 'Full Stack Developer',
-    period: 'Feb 2024 – Present',
+    period: 'Feb 2025 – Feb 2026',
     location: 'Gurgaon',
     principle: 'Reliability beats speed when users depend on you.',
     responsibility: 'Building scalable web applications and optimizing system performance',
@@ -31,7 +43,7 @@ const experiences: ExperienceItem[] = [
   {
     company: 'Valari Solutions',
     role: 'Full Stack Developer',
-    period: 'Feb 2023 – Feb 2024',
+    period: 'Feb 2024 – Feb 2025',
     location: 'Remote',
     principle: 'Ship early, then harden.',
     responsibility: 'Building scalable web applications and optimizing system performance',
@@ -46,7 +58,7 @@ const experiences: ExperienceItem[] = [
   {
     company: 'Spintly',
     role: 'Software Developer',
-    period: 'Sep 2022 – Feb 2023',
+    period: 'Sep 2022 – Feb 2024',
     location: 'Goa',
     principle: 'Performance is a feature, not an afterthought.',
     responsibility: 'Built cross-platform mobile apps and optimized backend services',
@@ -89,7 +101,7 @@ export default function Experience() {
                     {exp.company}
                   </p>
                   <p className="text-sm sm:text-sm text-text-secondary">
-                    {exp.period} • {exp.location}
+                    {exp.location ? `${exp.period} • ${exp.location}` : exp.period}
                   </p>
                 </div>
                 

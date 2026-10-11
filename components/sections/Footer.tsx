@@ -3,8 +3,8 @@
 import { Github, Linkedin } from 'lucide-react'
 
 const socialLinks = [
-  { name: 'LinkedIn', icon: Linkedin, url: 'https://www.linkedin.com/in/nolostra' },
-  { name: 'GitHub', icon: Github, url: 'https://github.com' },
+  { name: 'LinkedIn', icon: Linkedin, url: 'https://www.linkedin.com/in/nolostra/' },
+  { name: 'GitHub', icon: Github, url: 'https://github.com/nolostra' },
 ]
 
 export default function Footer() {
@@ -26,7 +26,7 @@ export default function Footer() {
                   key={social.name}
                   href={social.url}
                   target="_blank"
-                  rel="noopener noreferrer"
+                  rel="me noopener noreferrer"
                   className="text-text-secondary hover:text-accent transition-colors duration-200"
                   aria-label={social.name}
                 >

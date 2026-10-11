@@ -29,22 +29,24 @@ export default function Hero() {
           </h1>
           
           <p className="text-sm sm:text-xs md:text-sm lg:text-xl xl:text-2xl text-text-secondary max-w-2xl mx-auto leading-relaxed pt-2 sm:pt-0">
-            Full Stack Developer crafting scalable systems with clean architecture and real-world impact.
+            Full Stack Developer in Goa, India, crafting scalable systems with clean architecture and real-world impact. Currently at Algoworks.
           </p>
 
           <div className="flex flex-row gap-1.5 sm:gap-2 lg:gap-3 justify-center items-center pt-4 sm:pt-2 lg:pt-3 w-full max-w-xs sm:max-w-none mx-auto">
-            <button
-              onClick={scrollToProjects}
-              className="flex-1 sm:flex-none sm:w-auto px-2.5 sm:px-4 lg:px-5 py-1.5 sm:py-2 lg:py-2.5 bg-accent text-white font-medium rounded-lg hover:opacity-90 transition-opacity duration-200 text-sm sm:text-xs lg:text-base"
+            <a
+              href="#catalog"
+              onClick={(e) => { e.preventDefault(); scrollToProjects() }}
+              className="flex-1 sm:flex-none sm:w-auto text-center px-2.5 sm:px-4 lg:px-5 py-1.5 sm:py-2 lg:py-2.5 bg-accent text-white font-medium rounded-lg hover:opacity-90 transition-opacity duration-200 text-sm sm:text-xs lg:text-base"
             >
               View Work
-            </button>
-            <button
-              onClick={scrollToContact}
-              className="flex-1 sm:flex-none sm:w-auto px-2.5 sm:px-4 lg:px-5 py-1.5 sm:py-2 lg:py-2.5 bg-surface border border-border text-text font-medium rounded-lg hover:bg-bg transition-colors duration-200 text-sm sm:text-xs lg:text-base"
+            </a>
+            <a
+              href="#contact"
+              onClick={(e) => { e.preventDefault(); scrollToContact() }}
+              className="flex-1 sm:flex-none sm:w-auto text-center px-2.5 sm:px-4 lg:px-5 py-1.5 sm:py-2 lg:py-2.5 bg-surface border border-border text-text font-medium rounded-lg hover:bg-bg transition-colors duration-200 text-sm sm:text-xs lg:text-base"
             >
               Contact
-            </button>
+            </a>
           </div>
           
           <div className="pt-6 sm:pt-3 lg:pt-4 flex justify-center">

@@ -1,0 +1,24 @@
+# Saish Dabholkar
+
+> Saish Dabholkar is a Full Stack Developer based in Goa, India, with 4+ years of experience building scalable web and mobile applications, backend systems and AI-powered products. Open to remote work.
+
+## Current role
+- Full Stack Developer at Algoworks (Mar 2026 – Present), working with the client ACD (AIA Contract Documents) on enhancing documentation.
+
+## Experience
+- Trajector – Full Stack Developer (Feb 2025 – Feb 2026), Gurgaon
+- Valari Solutions – Full Stack Developer (Feb 2024 – Feb 2025), Remote: 30% faster API responses with NestJS, CI/CD cutting deploy time 50%
+- Spintly – Software Developer (Sep 2022 – Feb 2024), Goa: React Native apps, Node.js to Go migration (latency 200ms to 120ms), Flutter and React Native SDKs
+
+## Stack
+React, Next.js, React Native, TypeScript, Node.js, NestJS, Go, PostgreSQL, Redis, Kafka, AWS Lambda, Docker
+
+## Live work
+- CHEYNI: https://cheyni.io/ – festival-first streaming and submissions platform
+- Adi Gangesha: https://adigangesha.com/ – yoga teacher training and retreats website
+- Nandakumaran: https://nandakumaran.com/ – speaker and social leader website
+
+## Links
+- Portfolio: https://nolostra.github.io/nolostra/
+- LinkedIn: https://www.linkedin.com/in/nolostra/
+- GitHub: https://github.com/nolostra

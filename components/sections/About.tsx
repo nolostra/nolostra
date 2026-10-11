@@ -25,7 +25,7 @@ export default function About() {
         <ScrollReveal delay={0.15}>
           <div className="space-y-2 sm:space-y-3 lg:space-y-6 text-sm sm:text-sm lg:text-lg text-text-secondary leading-relaxed text-center">
             <p>
-              Full Stack Developer with 3+ years of experience building scalable web and mobile applications. 
+              Full Stack Developer with 4+ years of experience building scalable web and mobile applications. 
               Strong background in backend systems, performance optimization, and AI-powered products.
             </p>
             <p>

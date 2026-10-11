@@ -72,6 +72,7 @@ export default function Navigation() {
 
   return (
     <motion.nav
+      aria-label="Primary"
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3 }}
@@ -83,21 +84,24 @@ export default function Navigation() {
     >
       <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-12">
         <div className="flex items-center justify-between h-12 sm:h-16 lg:h-20">
-          <button
-            onClick={() => scrollTo('#hero')}
+          <a
+            href="#hero"
+            aria-label="Saish Dabholkar – home"
+            onClick={(e) => { e.preventDefault(); scrollTo('#hero') }}
             className="text-lg sm:text-lg lg:text-xl font-semibold text-text hover:text-accent transition-colors duration-200"
           >
             SD
-          </button>
+          </a>
 
           <div className="flex items-center gap-3 sm:gap-4 lg:gap-6">
             <div className="hidden lg:flex items-center gap-8">
               {navItems.map((item) => {
                 const isActive = activeSection === item.href.slice(1)
                 return (
-                  <button
+                  <a
                     key={item.name}
-                    onClick={() => scrollTo(item.href)}
+                    href={item.href}
+                    onClick={(e) => { e.preventDefault(); scrollTo(item.href) }}
                     className={`text-sm font-medium transition-all duration-200 ${
                       isActive
                         ? 'text-accent'
@@ -105,7 +109,7 @@ export default function Navigation() {
                     }`}
                   >
                     {item.name}
-                  </button>
+                  </a>
                 )
               })}
             </div>
@@ -156,9 +160,10 @@ export default function Navigation() {
                 {navItems.map((item) => {
                   const isActive = activeSection === item.href.slice(1)
                   return (
-                    <button
+                    <a
                       key={item.name}
-                      onClick={() => scrollTo(item.href)}
+                      href={item.href}
+                      onClick={(e) => { e.preventDefault(); scrollTo(item.href) }}
                       className={`block w-full text-left px-4 py-2 text-sm font-medium transition-all duration-200 ${
                         isActive
                           ? 'text-accent bg-accent/10'
@@ -166,7 +171,7 @@ export default function Navigation() {
                       }`}
                     >
                       {item.name}
-                    </button>
+                    </a>
                   )
                 })}
               </div>

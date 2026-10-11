@@ -13,7 +13,7 @@
 
 ## 🚀 About Me
 
-- 💻 3+ years building production-grade web applications  
+- 💻 4+ years building production-grade web applications  
 - 🤖 Building LLM-powered trading systems  
 - 🧠 Focused on AI agents & scalable backend architecture  
 - 📈 Performance-driven & automation-first mindset  

@@ -6,6 +6,7 @@ import ThemeToggle from '@/components/ThemeToggle'
 
 const navItems = [
   { name: 'Home', href: '#hero' },
+  { name: 'Catalog', href: '#catalog' },
   { name: 'Work', href: '#projects' },
   { name: 'Experience', href: '#experience' },
   { name: 'Contact', href: '#contact' },
@@ -20,7 +21,7 @@ export default function Navigation() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50)
 
-      const sections = ['hero', 'about', 'experience', 'projects', 'contact']
+      const sections = ['hero', 'about', 'catalog', 'projects', 'experience', 'contact']
       const scrollPosition = window.scrollY + 100
 
       for (let i = sections.length - 1; i >= 0; i--) {

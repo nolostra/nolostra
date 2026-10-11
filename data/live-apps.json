@@ -1,0 +1,20 @@
+[
+  {
+    "title": "CHEYNI",
+    "description": "A festival-first streaming and submissions platform built to connect filmmakers, curated screenings, and audiences around independent cinema.",
+    "tags": ["Streaming", "Film Festivals", "Creator Platform"],
+    "url": "https://cheyni.io/"
+  },
+  {
+    "title": "Adi Gangesha",
+    "description": "A website for a yoga teacher with 23+ years of experience, showcasing 100-hour trainings, retreats, and live online courses in yoga, pranayama, and Yoga Nidra.",
+    "tags": ["Yoga", "Retreats", "Online Courses"],
+    "url": "https://adigangesha.com/"
+  },
+  {
+    "title": "Nandakumaran",
+    "description": "The official website of a motivational speaker and social voice, focused on true education, health, and development, with invitations for talks and leadership summits.",
+    "tags": ["Personal Brand", "Speaker", "Leadership"],
+    "url": "https://nandakumaran.com/"
+  }
+]

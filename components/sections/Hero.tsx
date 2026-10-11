@@ -6,7 +6,7 @@ import StatusIndicator from '@/components/StatusIndicator'
 
 export default function Hero() {
   const scrollToProjects = () => {
-    const element = document.getElementById('projects')
+    const element = document.getElementById('catalog')
     element?.scrollIntoView({ behavior: 'smooth' })
   }
 

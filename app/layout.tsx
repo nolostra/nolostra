@@ -6,7 +6,7 @@ import { ThemeProvider } from '@/components/ThemeProvider'
 import CursorEffect from '@/components/CursorEffect'
 import StorageErrorHandler from '@/components/StorageErrorHandler'
 import GoogleAnalytics from '@/components/GoogleAnalytics'
-import { SITE, SITE_URL, FAQ } from '@/lib/site'
+import { SITE, SITE_URL, FAQ, LIVE_WORK } from '@/lib/site'
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -70,6 +70,8 @@ export const metadata: Metadata = {
   },
 }
 
+const BUILD_DATE = new Date().toISOString()
+
 const jsonLd = {
   '@context': 'https://schema.org',
   '@graph': [
@@ -86,6 +88,7 @@ const jsonLd = {
       '@id': `${SITE_URL}/#profilepage`,
       url: `${SITE_URL}/`,
       name: SITE.title,
+      dateModified: BUILD_DATE,
       isPartOf: { '@id': `${SITE_URL}/#website` },
       mainEntity: { '@id': `${SITE_URL}/#person` },
     },
@@ -100,6 +103,16 @@ const jsonLd = {
       address: { '@type': 'PostalAddress', addressRegion: 'Goa', addressCountry: 'IN' },
       knowsAbout: SITE.knowsAbout,
       sameAs: [SITE.linkedin, SITE.github],
+    },
+    {
+      '@type': 'ItemList',
+      '@id': `${SITE_URL}/#live-work`,
+      name: 'Live websites and apps built by Saish Dabholkar',
+      itemListElement: LIVE_WORK.map((w, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        item: { '@type': 'WebSite', name: w.name, url: w.url, description: w.description, creator: { '@id': `${SITE_URL}/#person` } },
+      })),
     },
     {
       '@type': 'FAQPage',

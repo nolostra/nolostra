@@ -96,6 +96,7 @@ export default function Experience() {
                 <div>
                   <h3 className="text-xl sm:text-xl lg:text-2xl font-semibold text-text mb-0.5 sm:mb-1">
                     {exp.role}
+                    <span className="sr-only"> at {exp.company}</span>
                   </h3>
                   <p className="text-lg sm:text-lg lg:text-xl text-accent font-medium mb-0.5 sm:mb-1 lg:mb-2">
                     {exp.company}

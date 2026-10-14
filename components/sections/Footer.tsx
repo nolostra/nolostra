@@ -9,13 +9,14 @@ const socialLinks = [
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
+  const updated = new Date().toLocaleDateString('en-GB', { month: 'long', year: 'numeric' })
 
   return (
     <footer className="py-6 sm:py-8 lg:py-16 px-2 sm:px-4 lg:px-12 border-t border-border">
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-6">
           <p className="text-[10px] sm:text-xs lg:text-sm text-text-secondary text-center sm:text-left">
-            © {currentYear} Saish Dabholkar
+            © {currentYear} Saish Dabholkar · Last updated {updated}
           </p>
 
           <div className="flex items-center gap-4 sm:gap-6 lg:gap-8">

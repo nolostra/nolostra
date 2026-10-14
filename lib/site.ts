@@ -4,9 +4,9 @@ export const SITE_URL = 'https://nolostra.github.io/nolostra'
 
 export const SITE = {
   name: 'Saish Dabholkar',
-  title: 'Saish Dabholkar | Full Stack Developer (React, Next.js, Node.js, Go)',
+  title: 'Saish Dabholkar | Full Stack Developer (React, Node, Go)',
   description:
-    'Saish Dabholkar is a Full Stack Developer from Goa, India with 4+ years of experience in React, Next.js, Node.js, NestJS, Go and React Native. Currently at Algoworks, building for ACD (AIA Contract Documents).',
+    'Saish Dabholkar is a Full Stack Developer in Goa, India with 4+ years in React, Next.js, Node.js and Go. Now at Algoworks. Open to remote.',
   jobTitle: 'Full Stack Developer',
   linkedin: 'https://www.linkedin.com/in/nolostra/',
   github: 'https://github.com/nolostra',
@@ -55,4 +55,10 @@ export const FAQ = [
     q: 'How can I contact Saish Dabholkar?',
     a: 'Use the contact form in the Contact section of this site, or message him on LinkedIn at linkedin.com/in/nolostra.',
   },
+]
+
+export const LIVE_WORK = [
+  { name: 'CHEYNI', url: 'https://cheyni.io/', description: 'Festival-first streaming and submissions platform for independent cinema.' },
+  { name: 'Adi Gangesha', url: 'https://adigangesha.com/', description: 'Website for a yoga teacher with 23+ years of experience: trainings, retreats and online courses.' },
+  { name: 'Nandakumaran', url: 'https://nandakumaran.com/', description: 'Official website of a motivational speaker and social voice on education, health and development.' },
 ]
